@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM SDR | Tarefas</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="tarefas">
+    <div class="app-shell">
+      <aside id="sidebar" class="sidebar"></aside>
+      <main class="content">
+        <header class="page-header page-header-row">
+          <div><h1>Tarefas</h1><p>Gestão completa de tarefas do time.</p></div>
+          <div class="actions-row">
+            <button id="novaTarefaBtn" class="btn-secondary" type="button">Nova tarefa</button>
+            <button id="exportTarefasCsv" class="btn-secondary" type="button">Exportar CSV</button>
+            <button id="exportTarefasPdf" class="btn-primary" type="button">Exportar PDF</button>
+          </div>
+        </header>
+
+        <section class="card">
+          <form id="tarefaForm" class="hidden">
+            <input id="tarefaId" type="hidden" />
+            <div class="form-grid">
+              <div><label for="tarefaTituloForm">Título *</label><input id="tarefaTituloForm" required /></div>
+              <div><label for="tarefaLeadForm">Lead vinculado *</label><select id="tarefaLeadForm" required></select></div>
+              <div><label for="tarefaRespForm">Responsável *</label><input id="tarefaRespForm" required /></div>
+              <div><label for="tarefaDataForm">Data *</label><input id="tarefaDataForm" type="date" required /></div>
+              <div><label for="tarefaHoraForm">Horário *</label><input id="tarefaHoraForm" type="time" required /></div>
+              <div><label for="tarefaStatusForm">Status *</label><select id="tarefaStatusForm"><option>pendente</option><option>concluída</option><option>atrasada</option></select></div>
+            </div>
+            <label for="tarefaDescricaoForm">Descrição *</label>
+            <textarea id="tarefaDescricaoForm" rows="3" required></textarea>
+            <div class="actions-row"><button class="btn-primary" type="submit">Salvar</button><button id="cancelarTarefa" class="btn-secondary" type="button">Cancelar</button></div>
+            <p id="tarefaError" class="error-message"></p>
+          </form>
+
+          <div class="filters-row cols-4">
+            <select id="filtroStatusTarefa"><option value="">Todos status</option><option value="pendente">pendente</option><option value="concluída">concluída</option><option value="atrasada">atrasada</option></select>
+            <input id="filtroResponsavelTarefa" placeholder="Responsável" />
+            <input id="filtroInicioTarefa" type="date" />
+            <input id="filtroFimTarefa" type="date" />
+          </div>
+
+          <div class="table-wrapper">
+            <table>
+              <thead><tr><th>Título</th><th>Lead</th><th>Responsável</th><th>Data</th><th>Status</th><th>Criação</th><th>Ações</th></tr></thead>
+              <tbody id="tarefasTbody"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

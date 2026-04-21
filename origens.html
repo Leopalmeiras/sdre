@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM SDR | Origens</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="origens">
+    <div class="app-shell">
+      <aside id="sidebar" class="sidebar"></aside>
+      <main class="content">
+        <header class="page-header"><h1>Origens</h1><p>Cadastro dinâmico de canais de entrada.</p></header>
+        <section class="card">
+          <form id="origemForm" class="inline-form" novalidate>
+            <input id="origemId" type="hidden" />
+            <input id="origemNome" placeholder="Nome da origem" required />
+            <button class="btn-primary" type="submit">Salvar</button>
+            <button id="cancelarEdicaoOrigem" class="btn-secondary hidden" type="button">Cancelar</button>
+          </form>
+          <p id="origemError" class="error-message"></p>
+          <ul id="origensLista" class="list-clean"></ul>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

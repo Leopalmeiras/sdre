@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM SDR | Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="dashboard">
+    <div class="app-shell">
+      <aside id="sidebar" class="sidebar"></aside>
+      <main class="content">
+        <header class="page-header">
+          <h1>Dashboard</h1>
+          <p>Visão consolidada de leads e tarefas.</p>
+        </header>
+
+        <section id="kpiGrid" class="kpi-grid"></section>
+
+        <section class="grid-2">
+          <article class="card">
+            <h2>Leads por classificação</h2>
+            <div id="classificacaoChart" class="stats-list"></div>
+          </article>
+          <article class="card">
+            <h2>Leads por origem</h2>
+            <div id="origemChart" class="stats-list"></div>
+          </article>
+          <article class="card">
+            <h2>Próximos leads quentes</h2>
+            <ul id="proximosQuentes" class="list-clean"></ul>
+          </article>
+          <article class="card">
+            <h2>Próximas tarefas</h2>
+            <ul id="proximasTarefas" class="list-clean"></ul>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
